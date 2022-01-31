@@ -1,2 +1,2 @@
-# Apagar-PC-Linux-desde-el-m-vil
+# Apagar PC Linux desde el móvil
 Aquí os enseñaré a cómo poder apagar el PC desde cualquier parte con Google Assistant, Alexa...
