@@ -1,17 +1,16 @@
 #!/bin/sh
-### BEGIN INIT INFO
+
+# INFO
 # Provides:          filenotifier
-# Required-Start:    $remote_fs $syslog
-# Required-Stop:     $remote_fs $syslog
-# Default-Start:     2 3 4 5
-# Default-Stop:      0 1 6
-# Short-Description: Something
-# Description:       Something else
-### END INIT INFO
-cd /home/tu_nombre_de_usuario/Dropbox/RemoteTurnOff
+# Package (AUR):     inotify-tools
+
+directory="/home/`whoami`/Dropbox/RemoteTurnOff"
+filename="fileToWatch.txt"
+
+cd $directory
 inotifywait -e close_write,moved_to,create -m . |
 while read -r directory events filename; do
-  if [ "$filename" = "fileToWatch.txt" ]; then
+  if [ $file=$filename ]; then
     systemctl poweroff
   fi
 done
